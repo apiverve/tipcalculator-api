@@ -12,15 +12,8 @@ public class BasicExample {
         TipCalculatorAPIClient client = new TipCalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;amount&quot;, &quot;100&quot;);
-        parameters.put(&quot;percentage&quot;, &quot;18&quot;);
-        parameters.put(&quot;people&quot;, &quot;4&quot;);
-        parameters.put(&quot;currency&quot;, &quot;USD&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
