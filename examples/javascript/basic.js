@@ -13,15 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/tipcalculator';
  */
 async function callTipCalculatorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            amount: &#x27;100&#x27;,
-            percentage: &#x27;18&#x27;,
-            people: &#x27;4&#x27;,
-            currency: &#x27;USD&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
