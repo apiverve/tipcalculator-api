@@ -15,9 +15,9 @@ const api = new tipcalculatorAPI({
 
 // Example query
 var query = {
-  amount: "100",
-  percentage: "18",
-  people: "4",
+  amount: 100,
+  percentage: 15,
+  people: 1,
   currency: "USD"
 };
 
