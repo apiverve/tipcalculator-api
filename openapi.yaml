@@ -1,56 +1,56 @@
 openapi: 3.0.4
 info:
   title: Tip Calculator
-  description: Tip Calculator is a tool for calculating tips and splitting bills among multiple people. It provides common tip percentage comparisons and per-person breakdowns.
+  description: >-
+    Tip Calculator is a tool for calculating tips and splitting bills among
+    multiple people. It provides common tip percentage comparisons and
+    per-person breakdowns.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/tipcalculator:
     get:
       summary: Calculate Tip
-      description: Tip Calculator is a tool for calculating tips and splitting bills among multiple people. It provides common tip percentage comparisons and per-person breakdowns.
+      description: Calculate tip amount and split bill among people
       operationId: tipcalculator
       parameters:
-      - name: amount
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The bill amount before tip
-        example: '100'
-      - name: percentage
-        default: '15'
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Tip percentage (0-100, default: 15)'
-        example: '18'
-      - name: people
-        default: '1'
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Number of people to split the bill (default: 1)'
-        example: '4'
-      - name: currency
-        default: USD
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Currency code for display (default: USD)'
-        example: USD
+        - name: amount
+          in: query
+          schema:
+            type: number
+          required: true
+          description: The bill amount before tip
+          example: 100
+        - name: percentage
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Tip percentage
+          example: 18
+        - name: people
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Number of people to split the bill
+          example: 4
+        - name: currency
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Currency code for display
+          example: USD
       responses:
         '200':
           description: Successful Response
@@ -66,11 +66,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   bill_amount: 100
                   tip_percentage: 18
@@ -83,32 +83,32 @@ paths:
                     tip_amount: 4.5
                     total_amount: 29.5
                   common_tip_amounts:
-                  - percentage: 10
-                    tip_amount: 10
-                    total: 110
-                    per_person: 27.5
-                  - percentage: 15
-                    tip_amount: 15
-                    total: 115
-                    per_person: 28.75
-                  - percentage: 18
-                    tip_amount: 18
-                    total: 118
-                    per_person: 29.5
-                  - percentage: 20
-                    tip_amount: 20
-                    total: 120
-                    per_person: 30
-                  - percentage: 25
-                    tip_amount: 25
-                    total: 125
-                    per_person: 31.25
+                    - percentage: 10
+                      tip_amount: 10
+                      total: 110
+                      per_person: 27.5
+                    - percentage: 15
+                      tip_amount: 15
+                      total: 115
+                      per_person: 28.75
+                    - percentage: 18
+                      tip_amount: 18
+                      total: 118
+                      per_person: 29.5
+                    - percentage: 20
+                      tip_amount: 20
+                      total: 120
+                      per_person: 30
+                    - percentage: 25
+                      tip_amount: 25
+                      total: 125
+                      per_person: 31.25
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -116,4 +116,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
