@@ -12,28 +12,24 @@ namespace APIVerve.API.TipCalculator
     {
         /// <summary>
         /// The bill amount before tip
-        /// Example: 100
         /// </summary>
         [JsonProperty("amount")]
         public string Amount { get; set; }
 
         /// <summary>
-        /// Tip percentage (0-100, default: 15)
-        /// Example: 18
+        /// Tip percentage
         /// </summary>
         [JsonProperty("percentage")]
         public string Percentage { get; set; }
 
         /// <summary>
-        /// Number of people to split the bill (default: 1)
-        /// Example: 4
+        /// Number of people to split the bill
         /// </summary>
         [JsonProperty("people")]
         public string People { get; set; }
 
         /// <summary>
-        /// Currency code for display (default: USD)
-        /// Example: USD
+        /// Currency code for display
         /// </summary>
         [JsonProperty("currency")]
         public string Currency { get; set; }
