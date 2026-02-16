@@ -44,7 +44,12 @@ from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = TipcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 
 try:
     # Make the API call
@@ -82,7 +87,12 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 ```
 
 ###### Simple Request
@@ -162,7 +172,12 @@ from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient, Tipcalculat
 
 api = TipcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 
 try:
     result = api.execute(query)
@@ -183,7 +198,12 @@ from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient, Tipcalculat
 
 api = TipcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 
 try:
     result = api.execute(query)
@@ -217,7 +237,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient, TipcalculatorAPIClientError
 
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 
 # Using context manager ensures proper cleanup
 with TipcalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -243,7 +268,12 @@ from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient
 # Enable debug mode
 api = TipcalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -258,8 +288,14 @@ from apiverve_tipcalculator.apiClient import TipcalculatorAPIClient
 
 api = TipcalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "amount": 100,
+    "percentage": 15,
+    "people": 1,
+    "currency": "USD"
+}
+
 try:
-    query = { "amount": 100, "percentage": 15, "people": 1, "currency": "USD" }
     result = api.execute(query)
     print(result)
 finally:
