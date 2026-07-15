@@ -4,36 +4,56 @@ declare module '@apiverve/tipcalculator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface tipcalculatorResponse {
     status: string;
     error: string | null;
     data: TipCalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface TipCalculatorData {
-      billAmount:       number;
-      tipPercentage:    number;
-      tipAmount:        number;
-      totalAmount:      number;
-      currency:         string;
-      splitBetween:     number;
+      billAmount:       number | null;
+      tipPercentage:    number | null;
+      tipAmount:        number | null;
+      totalAmount:      number | null;
+      currency:         null | string;
+      splitBetween:     number | null;
       perPerson:        PerPerson;
       commonTipAmounts: CommonTipAmount[];
+      formatted:        Formatted;
   }
   
   interface CommonTipAmount {
-      percentage: number;
-      tipAmount:  number;
-      total:      number;
-      perPerson:  number;
+      percentage: number | null;
+      tipAmount:  number | null;
+      total:      number | null;
+      perPerson:  number | null;
+  }
+  
+  interface Formatted {
+      billAmount:     null | string;
+      tipAmount:      null | string;
+      totalAmount:    null | string;
+      perPersonTotal: null | string;
   }
   
   interface PerPerson {
-      billAmount:  number;
-      tipAmount:   number;
-      totalAmount: number;
+      billAmount:  number | null;
+      tipAmount:   number | null;
+      totalAmount: number | null;
   }
 
   export default class tipcalculatorWrapper {
