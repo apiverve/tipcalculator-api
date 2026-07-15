@@ -156,24 +156,18 @@ async function makeRequest() {
         "per_person": 28.75
       },
       {
-        "percentage": 18,
-        "tip_amount": 18,
-        "total": 118,
-        "per_person": 29.5
-      },
-      {
         "percentage": 20,
         "tip_amount": 20,
         "total": 120,
         "per_person": 30
-      },
-      {
-        "percentage": 25,
-        "tip_amount": 25,
-        "total": 125,
-        "per_person": 31.25
       }
-    ]
+    ],
+    "formatted": {
+      "bill_amount": "$100.00",
+      "tip_amount": "$18.00",
+      "total_amount": "$118.00",
+      "per_person_total": "$29.50"
+    }
   }
 }
 ```
