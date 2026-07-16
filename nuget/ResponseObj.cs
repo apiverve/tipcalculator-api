@@ -25,59 +25,92 @@ namespace APIVerve.API.TipCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("bill_amount")]
-        public long BillAmount { get; set; }
+        public long? BillAmount { get; set; }
 
         [JsonProperty("tip_percentage")]
-        public long TipPercentage { get; set; }
+        public long? TipPercentage { get; set; }
 
         [JsonProperty("tip_amount")]
-        public long TipAmount { get; set; }
+        public long? TipAmount { get; set; }
 
         [JsonProperty("total_amount")]
-        public long TotalAmount { get; set; }
+        public long? TotalAmount { get; set; }
 
         [JsonProperty("currency")]
         public string Currency { get; set; }
 
         [JsonProperty("split_between")]
-        public long SplitBetween { get; set; }
+        public long? SplitBetween { get; set; }
 
         [JsonProperty("per_person")]
         public PerPerson PerPerson { get; set; }
 
         [JsonProperty("common_tip_amounts")]
         public CommonTipAmount[] CommonTipAmounts { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
     }
 
     public partial class CommonTipAmount
     {
         [JsonProperty("percentage")]
-        public long Percentage { get; set; }
+        public long? Percentage { get; set; }
 
         [JsonProperty("tip_amount")]
-        public long TipAmount { get; set; }
+        public long? TipAmount { get; set; }
 
         [JsonProperty("total")]
-        public long Total { get; set; }
+        public long? Total { get; set; }
 
         [JsonProperty("per_person")]
-        public double PerPerson { get; set; }
+        public double? PerPerson { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("bill_amount")]
+        public string BillAmount { get; set; }
+
+        [JsonProperty("tip_amount")]
+        public string TipAmount { get; set; }
+
+        [JsonProperty("total_amount")]
+        public string TotalAmount { get; set; }
+
+        [JsonProperty("per_person_total")]
+        public string PerPersonTotal { get; set; }
     }
 
     public partial class PerPerson
     {
         [JsonProperty("bill_amount")]
-        public long BillAmount { get; set; }
+        public long? BillAmount { get; set; }
 
         [JsonProperty("tip_amount")]
-        public double TipAmount { get; set; }
+        public double? TipAmount { get; set; }
 
         [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; }
+        public double? TotalAmount { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
