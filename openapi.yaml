@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Tip Calculator
   description: >-
-    Tip Calculator is a tool for calculating tips and splitting bills among
-    multiple people. It provides common tip percentage comparisons and
-    per-person breakdowns.
+    Tip Calculator computes tips and splits bill totals across group members.
+    Pass a pre-tip bill amount, tip percentage, and group size to get the tip
+    total, overall cost, and individual per-person shares.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/tipcalculator:
     get:
-      summary: Calculate Tip
+      summary: Tip Calculator
       description: Calculate tip amount and split bill among people
       operationId: tipcalculator
       parameters:

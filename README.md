@@ -1,13 +1,13 @@
-# [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Tip Calculator is a tool for calculating tips and splitting bills among multiple people. It provides common tip percentage comparisons and per-person breakdowns.
+Tip Calculator computes tips and splits bill totals across group members. Pass a pre-tip bill amount, tip percentage, and group size to get the tip total, overall cost, and individual per-person shares.
 
 The Tip Calculator API provides a simple, reliable way to integrate tip calculator functionality into your applications. Built for developers who need production-ready tip calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -164,7 +164,7 @@ go get github.com/apiverve/tipcalculator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/tipcalculator](https://docs.apiverve.com/ref/tipcalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -194,11 +194,64 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Tip Calculator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "bill_amount": 100,
+    "tip_percentage": 18,
+    "tip_amount": 18,
+    "total_amount": 118,
+    "currency": "USD",
+    "split_between": 4,
+    "per_person": {
+      "bill_amount": 25,
+      "tip_amount": 4.5,
+      "total_amount": 29.5
+    },
+    "common_tip_amounts": [
+      {
+        "percentage": 10,
+        "tip_amount": 10,
+        "total": 110,
+        "per_person": 27.5
+      },
+      {
+        "percentage": 15,
+        "tip_amount": 15,
+        "total": 115,
+        "per_person": 28.75
+      },
+      {
+        "percentage": 20,
+        "tip_amount": 20,
+        "total": 120,
+        "per_person": 30
+      }
+    ],
+    "formatted": {
+      "bill_amount": "$100.00",
+      "tip_amount": "$18.00",
+      "total_amount": "$118.00",
+      "per_person_total": "$29.50"
+    }
+  }
 }
 ```
 
@@ -206,7 +259,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
