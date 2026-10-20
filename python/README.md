@@ -1,13 +1,12 @@
 Tip Calculator API
 ============
 
-Tip Calculator is a tool for calculating tips and splitting bills among multiple people. It provides common tip percentage comparisons and per-person breakdowns.
+Tip Calculator computes tips and splits bill totals across group members. Pass a pre-tip bill amount, tip percentage, and group size to get the tip total, overall cost, and individual per-person shares.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-tipcalculator.svg)](https://pypi.org/project/apiverve-tipcalculator/)
+
+This is a Python wrapper for the [Tip Calculator API](https://apiverve.com/marketplace/tipcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-tipcalculator
 
 ## Configuration
 
-Before using the tipcalculator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Tip Calculator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -65,7 +64,7 @@ except Exception as e:
 
 ## Usage
 
-The Tip Calculator API documentation is found here: [https://docs.apiverve.com/ref/tipcalculator](https://docs.apiverve.com/ref/tipcalculator?utm_source=pypi&utm_medium=readme).
+The Tip Calculator API documentation is found here: [https://docs.apiverve.com/ref/tipcalculator](https://docs.apiverve.com/ref/tipcalculator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -137,24 +136,18 @@ print(result)
         "per_person": 28.75
       },
       {
-        "percentage": 18,
-        "tip_amount": 18,
-        "total": 118,
-        "per_person": 29.5
-      },
-      {
         "percentage": 20,
         "tip_amount": 20,
         "total": 120,
         "per_person": 30
-      },
-      {
-        "percentage": 25,
-        "tip_amount": 25,
-        "total": 125,
-        "per_person": 31.25
       }
-    ]
+    ],
+    "formatted": {
+      "bill_amount": "$100.00",
+      "tip_amount": "$18.00",
+      "total_amount": "$118.00",
+      "per_person_total": "$29.50"
+    }
   }
 }
 ```
@@ -307,7 +300,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -318,12 +311,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
