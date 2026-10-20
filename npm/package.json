@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/tipcalculator",
-  "version": "1.2.0",
-  "description": "Tip Calculator is a tool for calculating tips and splitting bills among multiple people. It provides common tip percentage comparisons and per-person breakdowns.",
+  "version": "1.2.2",
+  "description": "Tip Calculator computes tips and splits bill totals across group members. Pass a pre-tip bill amount, tip percentage, and group size to get the tip total, overall cost, and individual per-person shares.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/tipcalculator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/tipcalculator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/tipcalculator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
