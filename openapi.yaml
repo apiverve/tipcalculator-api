@@ -28,7 +28,7 @@ paths:
           schema:
             type: number
           required: true
-          description: The bill amount before tip
+          description: The bill amount before tip (max 1,000,000,000,000)
           example: 100
         - name: percentage
           in: query
