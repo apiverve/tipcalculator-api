@@ -67,7 +67,7 @@ namespace APIVerve.API.TipCalculator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "amount", new ValidationRule { Type = "number", Required = true, Min = 0 } },
+            { "amount", new ValidationRule { Type = "number", Required = true, Min = 0, Max = 1000000000000 } },
             { "percentage", new ValidationRule { Type = "number", Required = false, Min = 0, Max = 100 } },
             { "people", new ValidationRule { Type = "integer", Required = false, Min = 1 } },
             { "currency", new ValidationRule { Type = "string", Required = false } }

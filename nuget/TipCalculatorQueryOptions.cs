@@ -11,7 +11,7 @@ namespace APIVerve.API.TipCalculator
     public class TipCalculatorQueryOptions
     {
         /// <summary>
-        /// The bill amount before tip
+        /// The bill amount before tip (max 1,000,000,000,000)
         /// </summary>
         [JsonProperty("amount")]
         public double Amount { get; set; }
