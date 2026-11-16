@@ -30,7 +30,7 @@ class tipcalculatorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/tipcalculator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"amount":{"type":"number","required":true,"min":0},"percentage":{"type":"number","required":false,"min":0,"max":100,"default":15},"people":{"type":"integer","required":false,"min":1,"default":1},"currency":{"type":"string","required":false,"default":"USD"}};
+        this.validationRules = {"amount":{"type":"number","required":true,"min":0,"max":1000000000000},"percentage":{"type":"number","required":false,"min":0,"max":100,"default":15},"people":{"type":"integer","required":false,"min":1,"default":1},"currency":{"type":"string","required":false,"default":"USD"}};
     }
 
     /**
