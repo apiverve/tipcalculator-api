@@ -34,7 +34,7 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'amount' => ['type' => 'number', 'required' => true, 'min' => 0],
+        'amount' => ['type' => 'number', 'required' => true, 'min' => 0, 'max' => 1000000000000],
         'percentage' => ['type' => 'number', 'required' => false, 'min' => 0, 'max' => 100],
         'people' => ['type' => 'integer', 'required' => false, 'min' => 1],
         'currency' => ['type' => 'string', 'required' => false]
